@@ -15543,17 +15543,7 @@ a.shopping-cart > svg {
     opacity: 1;
     visibility: visible;
 }
-.msg-pepl-list .nav-item.unread::before {
-    background: red none repeat scroll 0 0;
-    border-radius: 100%;
-    bottom: 10px;
-    content: "";
-    height: 12px;
-    position: absolute;
-    right: 13px;
-    width: 12px;
-	z-index: 2;
-}
+
 .btn.group.dropdown-toggle::after {
     display: none;
 }
