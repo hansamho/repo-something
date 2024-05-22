@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jlook.infra.member.MemberDao">
+
+	<resultMap id="resultMapObj" type="com.jlook.infra.member.MemberDto"></resultMap>
+
+	<!--<select id="selectList" resultMap="resultMapObj">  애매 
+
+         select
+             memberSeq
+             ,memberName
+             ,memberId
+             ,memberPwd
+         	 ,memberEmail
+         	 ,genderCd
+         	 ,birthDay
+         	 ,phoneNumber
+         	 ,memberDelNy
+         	 ,memberRegDate
+         	 ,memberModDate
+         from 
+             member 
+	   WHERE 1=1
+	   
+	        <if test="shDelNy != null and shDelNy.equals('')">AND memberDelNy = #{shDelNy}</if>
+	     
+	     
+			<choose>
+				<when test="shOptionDate == 1">AND a.regDatetime BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+				<when test="shOptionDate == 2">AND a.modDatetime BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+			</choose>
+	
+	    	 <choose>
+	         	 <when test="shOption == 1">AND memberSeq = #{shValue}</when>
+	            <when test="shOption == 2">AND memberName LIKE CONCAT('%',#{shValue},'%')</when>
+	       	 </choose>
+	       	 
+	</select>-->
+	
+	<sql id ="selectCommon">
+		 from member 
+	             
+	   WHERE 1=1
+	  
+	      <if test="shDelNy != null and !shDelNy.equals('')">AND memberDelNy = #{shDelNy}</if>
+	     
+	     
+			<choose>
+				<when test="shOptionDate == 1">AND memberRegDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+				<when test="shOptionDate == 2">AND memberModDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+			</choose>
+	
+	    	 <choose>
+	         	 <when test="shOption == 1">AND memberSeq = #{shValue}</when>
+	            <when test="shOption == 2">AND memberName LIKE CONCAT('%',#{shValue},'%')</when>
+	       	 </choose>
+	</sql>
+	
+	<select id="selectList" resultMap="resultMapObj"> <!-- 애매 -->
+
+         select
+             memberSeq
+             ,memberName
+             ,memberId
+             ,memberPwd
+         	 ,memberEmail
+         	 ,genderCd
+         	 ,birthDay
+         	 ,phoneNumber
+         	 ,memberDelNy
+         	 ,memberRegDate
+         	 ,memberModDate
+         	  <include refid="selectCommon" />
+
+         	 limit #{rowNumToShow} offset #{startRnumForMysql}
+     </select>
+     
+     <select id="naverOne" resultMap="resultMapObj">
+		select
+			memberSeq
+			,memberName
+            ,memberId
+		from member 
+		where 1 = 1
+			AND memberId = #{email}
+	</select>
+	
+	<insert id="naverInsert">
+	insert into member(
+	memberName
+	,memberId
+	,phoneNumber
+	) values(
+	#{name}
+	,#{email}
+	,#{mobile}
+	)
+	</insert>
+     
+     <select id="selectOneCount" resultType="Integer">
+		SELECT COUNT(*)
+		<include refid="selectCommon" />
+	</select>
+	
+	<select id="selectOneCountPB" resultType="Integer">
+		SELECT COUNT(*) FROM product
+		where productBestNy = 0
+	</select>
+	
+	<select id="selectOneCountPN" resultType="Integer">
+		SELECT COUNT(*) FROM product
+		where productNewNy = 1
+	</select>
+	
+	<select id="selectOne" resultMap="resultMapObj">
+		select
+			memberSeq
+            ,memberName
+            ,memberId
+            ,memberPwd
+         	,memberEmail
+         	,genderCd
+         	,birthDay
+         	,phoneNumber
+         	,memberDelNy
+         	,memberRegDate
+         	,memberModDate
+		from member 
+		where 1 = 1
+			AND memberSeq = #{memberSeq}
+	</select>
+	
+	<insert id="insert">
+		insert into member (
+		 	memberName
+            ,memberId
+            ,memberPwd
+         	,memberEmail
+         	,genderCd
+         	,birthDay
+         	,phoneNumber
+		) values (
+		#{memberName}
+		,#{memberId}
+		,#{memberPwd}
+		,#{memberEmail}
+		,#{genderCd}
+		,#{birthDay}
+		,#{phoneNumber}
+		)
+	</insert>
+	
+	
+	<update id="update">
+		update member
+		set
+			memberName = #{memberName}
+            ,memberId = #{memberId}
+            ,memberPwd = #{memberPwd}
+         	,memberEmail = #{memberEmail}
+         	,genderCd = #{genderCd}
+         	,birthDay = #{birthDay}
+         	,phoneNumber = #{phoneNumber}
+    		where 1=1
+    		and memberSeq = #{memberSeq}
+	</update>
+	
+	<update id="uelete">
+		update member
+		set
+		memberDelNy = 1
+    		where 1=1
+    		and memberSeq = #{memberSeq}
+	</update>
+	
+	<delete id="delete">
+		delete from member
+		where 1 = 1
+			and memberSeq = #{memberSeq}
+	</delete>
+	
+	
+	<!-- user -->
+	<select id="selectLogin" resultMap="resultMapObj"> <!-- 애매 -->
+         select
+             memberId
+             ,memberPwd
+             ,memberName
+             ,memberSeq
+             ,genderCd
+             ,birthDay
+             ,memberEmail
+             ,phoneNumber
+        from
+        	member
+        	where 1=1
+        	and memberId = #{memberId}
+     </select>
+     
+    
+	
+	<select id="selectListNew" resultMap="resultMapObj">
+	SELECT
+	 a.productSeq
+             ,a.productName
+             ,a.productPrice
+         	 ,a.productGenderCd
+         	 ,a.productSeasonCd
+         	 ,a.productNewNy
+         	 ,b.path
+	FROM
+		product a
+	LEFT JOIN
+		fileUploaded b
+	ON a.productSeq = b.pseq
+	WHERE 1=1
+		AND a.productNewNy = 1
+		AND b.defaultNy=1
+		limit 8 offset #{startRnumForMysql}
+	</select>
+	
+	<select id="selectListBest" resultMap="resultMapObj">
+	SELECT
+	 a.productSeq
+             ,a.productName
+             ,a.productPrice
+         	 ,a.productGenderCd
+         	 ,a.productSeasonCd
+         	 ,a.productBestNy
+         	 ,b.path
+	FROM
+		product a
+	LEFT JOIN
+		fileUploaded b
+	ON a.productSeq = b.pseq
+	WHERE 1=1
+		AND a.productBestNy = 1
+		AND b.defaultNy=1
+		limit 8 offset #{startRnumForMysql}
+	</select>
+</mapper>
