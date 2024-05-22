@@ -1259,8 +1259,8 @@ header.sticky {
 }
 
 .dropdowns.languages {
-    padding: 6px 25px;
-    width: 800px;
+    padding: 6px 10px;
+    width: 200px;
 }
 
 .dropdowns.active > a:hover {
