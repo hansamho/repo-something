@@ -426,11 +426,6 @@ $('.save-post, .bane, .get-link').on("click", function() {
 	});
 	}(jQuery));	
 
-//progress line for page loader
-	$('body').show();
-	NProgress.start();
-	setTimeout(function() { NProgress.done(); $('.fade').removeClass('out'); }, 5000);
-	
 //--- bootstrap tooltip and popover	
 	$(function () {
 	  $('[data-toggle="tooltip"]').tooltip();
