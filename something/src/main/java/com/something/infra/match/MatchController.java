@@ -11,4 +11,10 @@ public class MatchController {
 		
 		return "usr/infra/match/match";
 	}
+	@RequestMapping(value = "/tes")
+	public String tes() {
+		
+		return "element";
+	}
+	
 }
