@@ -9,7 +9,13 @@ public class ReviewController {
 	@RequestMapping(value = "/usrReviewList")
 	public String usrReviewList() {
 		
-		return "usr/infra/index/review";
+		return "usr/infra/index/reviewList";
+	}
+	
+	@RequestMapping(value = "/usrReviewReg")
+	public String usrReviewReg() {
+		
+		return "usr/infra/index/reviewReg";
 	}
 	
 }

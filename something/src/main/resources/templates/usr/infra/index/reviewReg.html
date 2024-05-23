@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<div th:replace="~{usr/infra/include/usrhead :: head}"></div>
+
+<body>
+	
+	<!--파일헤더 블록처리-->
+	<div th:replace="~{usr/infra/include/usrheader :: usrheader}"></div>
+	
+
+
+		<section>
+			<div class="gap">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<div class="main-wraper">
+								<div class="user-profile">
+									<h1 class="title">사진 업로드 </h1>
+								<figure>
+									<div class="edit-pp">
+										<label class="fileContainer">
+											<i class="fa fa-camera"></i>
+											<input type="file">
+										</label>
+									</div>
+									<img src="images/resources/shop-topbg.jpg" alt="">
+								</figure>
+								
+							</div><!-- user profile banner  -->
+							</div>
+							<div class="main-wraper">
+								<div class="comment-area product">
+									<div class="add-comment mt-5">
+										<h1 class="title">리뷰작성 </h1>
+										<span>Give Your Reviews</span>
+										<ul class="stars mb-3">
+											<li><i class="fa fa-star"></i></li>
+											<li><i class="fa fa-star"></i></li>
+											<li><i class="fa fa-star"></i></li>
+											<li><i class="fa fa-star"></i></li>
+											<li><i class="fa fa-star"></i></li>
+										</ul>
+										<form method="post" class="c-form">
+											<textarea class="mb-3" rows="4" placeholder="Write Something"></textarea>
+											<button class="main-btn mt-2" type="submit">Add Review</button>
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="main-wraper mt-5">
+								<h4 class="title">핫플레이스 <a class="view-all" href="#" title="">전체보기</a>
+								</h4>
+								<div class="books-caro">
+									<div class="book-post">
+										<figure><a href="book-detail.html" title=""><img
+													src="images/resources/course-2.png" alt=""></a></figure>
+										<a href="book-detail.html" title="">Html5 Brick Breaker</a>
+									</div>
+									<div class="book-post">
+										<figure><a href="book-detail.html" title=""><img
+													src="images/resources/course-1.jpg" alt=""></a></figure>
+										<a href="book-detail.html" title="">Pure Css Tutorials</a>
+									</div>
+									<div class="book-post">
+										<figure><a href="book-detail.html" title=""><img
+													src="images/resources/course-3.jpg" alt=""></a></figure>
+										<a href="book-detail.html" title="">Basic Angular</a>
+									</div>
+									<div class="book-post">
+										<figure><a href="book-detail.html" title=""><img
+													src="images/resources/course-4.jpg" alt=""></a></figure>
+										<a href="book-detail.html" title="">Advance Css3</a>
+									</div>
+									<div class="book-post">
+										<figure><a href="book-detail.html" title=""><img
+													src="images/resources/course-5.jpg" alt=""></a></figure>
+										<a href="book-detail.html" title="">Wordpress Advance</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+		<div th:replace="~{usr/infra/include/usrfooter :: usrfooter}"></div>
+
+</body>
+
+</html>
