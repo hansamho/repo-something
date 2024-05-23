@@ -15,6 +15,6 @@ public class MemberController {
 	@RequestMapping(value="/usrlogin")
 	public String usrlogin() {
 		
-		return "usr/infra/index/logout";
+		return "usr/infra/index/login";
 	}
 }
