@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class ReviewController {
 
-	@RequestMapping(value = "/usrReview")
-	public String usrReview() {
+	@RequestMapping(value = "/usrReviewList")
+	public String usrReviewList() {
 		
-		return "usr/infra/match/review";
+		return "usr/infra/index/review";
 	}
 	
 }

@@ -9,12 +9,7 @@ public class MatchController {
 	@RequestMapping(value = "/usrmatch")
 	public String usrmatch() {
 		
-		return "usr/infra/match/match";
-	}
-	@RequestMapping(value = "/tes")
-	public String tes() {
-		
-		return "element";
+		return "usr/infra/index/match";
 	}
 	
 }
