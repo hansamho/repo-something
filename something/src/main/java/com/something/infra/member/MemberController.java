@@ -9,7 +9,7 @@ public class MemberController {
 	@RequestMapping(value = "/usrindex")
 	public String usrindex() {
 		
-		return "usr/infra/member/index";
+		return "usr/infra/index/index";
 	}
 
 }

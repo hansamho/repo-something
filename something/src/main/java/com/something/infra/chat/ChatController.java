@@ -9,7 +9,7 @@ public class ChatController {
 	@RequestMapping(value="/usrchat")
 	public String chat()throws Exception{
 		
-		return "usr/infra/chat/chat";
+		return "usr/infra/index/chat";
 	}
 	
 }
