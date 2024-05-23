@@ -1,127 +1,11 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-	<title>Pitnik Social Network Toolkit</title>
-    <link rel="icon" href="images/fav.png" type="image/png" sizes="16x16"> 
-    
-    <link rel="stylesheet" href="css/main.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/color.css">
-    <link rel="stylesheet" href="css/responsive.css">
 
-</head>
+	<div th:replace="~{usr/infra/include/usrhead :: head}"></div>
+	
 <body>
-<div class="wavy-wraper">
-		<div class="wavy">
-		  <span style="--i:1;">p</span>
-		  <span style="--i:2;">i</span>
-		  <span style="--i:3;">t</span>
-		  <span style="--i:4;">n</span>
-		  <span style="--i:5;">i</span>
-		  <span style="--i:6;">k</span>
-		  <span style="--i:7;">.</span>
-		  <span style="--i:8;">.</span>
-		  <span style="--i:9;">.</span>
-		</div>
-	</div>
-<div class="theme-layout">
-
-	
-	
-	<div class="topbar stick">
-		<div class="logo">
-			<a title="" href="newsfeed.html"><img src="images/logo.png" alt=""></a>
-		</div>
-		<div class="top-area">
-			<div class="top-search">
-				<form method="post" class="">
-					<input type="text" placeholder="Search People, Pages, Groups etc">
-					<button data-ripple><i><svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 512 512" class="search-icon" height="15px" width="15px">
-                        <path d="M455 455a25 25 0 01-35.4 0l-81.3-81.2a32.2 32.2 0 01-.9-44.7 137 137 0 00-101-229.5h-.5a136 136 0 00-97 40.9 137.3 137.3 0 00.6 192.7 136.4 136.4 0 00139.2 33.6 25 25 0 0115.3 47.6 187 187 0 01-190-46 187.5 187.5 0 01-.8-263 185.6 185.6 0 01132.5-55.8h.8A187 187 0 01385 350l69.9 69.8a25 25 0 010 35.4z"></path>
-                        <path d="M0 0h512v512H0z" fill="none"></path>
-                    </svg></i></button>
-				</form>
-			</div>
-			<div class="page-name">
-			    <span>Chats</span>
-			 </div>
-			<ul class="setting-area float-left">
-				
-				<!-- 다국어 -->
-				<li><a href="#" title="Languages" data-ripple=""><i>
-								<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-									fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
-									stroke-linejoin="round" class="feather feather-globe">
-									<circle cx="12" cy="12" r="10"></circle>
-									<line x1="2" y1="12" x2="22" y2="12"></line>
-									<path
-										d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-									</path>
-								</svg></i><em>EN</em></a>
-						<div class="dropdowns languages">
-								<div class="col">
-									<ul class="dropdown-meganav-select-list-lang">
-										<li>
-											<a href="#">
-												<img title="Image Title" alt="Image Alternative text"
-													src="images/flags/KOR.png">한국어
-											</a>
-										</li>
-										<li>
-											<a href="#">
-												<img title="Image Title" alt="Image Alternative text"
-													src="images/flags/JP.png">日本語
-											</a>
-										</li>
-										<li>
-											<a href="#">
-												<img title="Image Title" alt="Image Alternative text"
-													src="images/flags/CN.png">简体中文
-											</a>
-										</li>
-										<li>
-											<a href="#">
-												<img title="Image Title" alt="Image Alternative text"
-													src="images/flags/UK.png">English(UK)
-											</a>
-										</li>
-										<li class="active">
-											<a href="#">
-												<img title="Image Title" alt="Image Alternative text"
-													src="images/flags/US.png">English(US)
-											</a>
-										</li>
-										<li>
-											<a href="#">
-												<img title="Image Title" alt="Image Alternative text"
-													src="images/flags/ARB.png">العربية
-											</a>
-										</li>
-									</ul>
-								</div>
-						</div>
-					</li>
-			</ul>
-			<div class="user-img">
-				<h5>Jack Carter</h5>
-				<img src="images/resources/admin.jpg" alt="">
-				<div class="user-setting">
-					<span class="seting-title">Chat setting <a href="#" title="">see all</a></span>
-					<ul class="log-out">
-						<li><a href="about.html" title=""><i class="ti-user"></i> view profile</a></li>
-						<li><a href="setting.html" title=""><i class="ti-pencil-alt"></i>edit profile</a></li>
-						<li><a href="#" title=""><i class="ti-target"></i>activity log</a></li>
-						<li><a href="setting.html" title=""><i class="ti-settings"></i>account setting</a></li>
-						<li><a href="logout.html" title=""><i class="ti-power-off"></i>log out</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div><!-- topbar -->
+<!--파일헤더 블록처리-->
+	<div th:replace="~{usr/infra/include/usrheader :: usrheader}"></div>
 		
 	<section>
 		<div class="gap2 no-gap gray-bg">
@@ -153,11 +37,9 @@
 								<ul class="nav nav-tabs nav-tabs--vertical msg-pepl-list">
 									<li class="nav-item unread">
 										<a class="active" href="#link1" data-toggle="tab">
-											<figure><img src="images/resources/friend-avatar3.jpg" alt="">
-											</figure>
+											<figure><img src="images/resources/friend-avatar3.jpg" alt=""></figure>
 											<div class="user-name">
 												<h6 class="">Andrew</h6>
-												<span>you send a video - 2hrs ago</span>
 											</div>
 											<div class="more">
 												<div class="more-post-optns"><i class="ti-more-alt"></i>
@@ -172,11 +54,9 @@
 									</li>
 									<li class="nav-item ">
 										<a class="" href="#link2" data-toggle="tab">
-											<figure><img src="images/resources/admin.jpg" alt="">
-											</figure>
+											<figure><img src="images/resources/admin.jpg" alt=""></figure>
 											<div class="user-name">
 												<h6 class="unread">Jack Carter</h6>
-												<span>you send a audio - Tue</span>
 											</div>
 											<div class="more">
 												<div class="more-post-optns"><i class="ti-more-alt"></i>
@@ -272,7 +152,7 @@
 										<div class="message-writing-box">
 											<form method="post">
 												<div class="text-area">
-													<input type="text" placeholder="">
+													<input type="text" placeholder="메세지를 입력해 주세요">
 													<button type="submit"><i class="fa-regular fa-paper-plane"></i></button>
 												</div>
 												<div class="attach-file">
@@ -290,12 +170,12 @@
 											<figure><img src="images/resources/chatuser1.jpg" alt=""></figure>
 											<h6>Andrew</h6>
 											<div class="userabout">
-												<span>About</span>
+												<span>간단한 소개</span>
 												<p>I love reading, traveling and discovering new things. You need to be happy in life.</p>
 												<ul>
 													<li><span>핸드폰:</span> +123976980</li>
 													<li><span>이메일:</span> sample@gmail.com</li>
-													<li><span>MBTI:</span> Ontario, Canada</li>
+													<li><span>MBTI:</span> ENTP</li>
 												</ul>
 											</div>
 										</div>
@@ -307,8 +187,7 @@
 									<div class="col-lg-12">
 										<div class="mesg-area-head">
 											<div class="active-user">
-												<figure><img src="images/resources/admin.jpg" alt="">
-													<span class="status f-away"></span>
+												<figure><img src="images/resources/admin.jpg" alt="" align="right">
 												</figure>
 												<div>
 													<h6 class="unread">Jack Carter</h6>
@@ -316,67 +195,11 @@
 											</div>
 										</div>
 									</div>
+									<!-- 채팅 입력 -->
 									<div class="col-lg-8">
 										<div class="mesge-area conversations">
 											<div class="empty-chat">
 												<div class="no-messages">
-													<i class="ti-comments"></i>
-													<p>Seems people are shy to start the chat. Break the ice send the first message.</p>
-												</div>
-											</div>
-										</div>
-										<div class="message-writing-box">
-											<form method="post">
-												<div class="text-area">
-													<input type="text" placeholder="write your message here..">
-													<button type="submit"><i class="fa-regular fa-paper-plane"></i></button>
-												</div>
-												<div class="attach-file">
-													<label class="fileContainer">
-														<i class="ti-clip"></i>
-														<input type="file">
-													</label>
-												</div>
-											</form>
-										</div>
-									</div>
-									<div class="col-lg-4">
-										<div class="chater-info">
-											<figure><img src="images/resources/author.jpg" alt=""></figure>
-											<h6>Jack Carter</h6>
-											<div class="userabout">
-												<span>About</span>
-												<p>I love reading, traveling and discovering new things. You need to be happy in life.</p>
-												<ul>
-													<li><span>핸드폰:</span> +123976980</li>
-													<li><span>이메일:</span> sample@gmail.com</li>
-													<li><span>MBTI:</span> Ontario, Canada</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="tab-pane fade" id="link3" >
-								<div class="row merged">
-									<div class="col-lg-12">
-										<div class="mesg-area-head">
-											<div class="active-user">
-												<figure><img src="images/resources/friend-avatar4.jpg" alt="">
-												</figure>
-												<div>
-													<h6 class="unread">Julie Robert</h6>
-													<span>Online</span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-8">
-										<div class="mesge-area conversations">
-											<div class="empty-chat">
-												<div class="no-messages">
-													<i class="ti-comments"></i>
-													<p>Seems people are shy to start the chat. Break the ice send the first message.</p>
 												</div>
 											</div>
 										</div>
@@ -395,45 +218,19 @@
 											</form>
 										</div>
 									</div>
+									<!-- 참여자 정보 -->
 									<div class="col-lg-4">
 										<div class="chater-info">
-											<figure><img src="images/resources/chatuser3.jpg" alt=""></figure>
-											<h6>Julie Robert</h6>
+											<figure><img src="images/resources/author.jpg" alt=""></figure>
+											<h6>Jack Carter</h6>
 											<div class="userabout">
-												<span>About</span>
+												<span>간단한 소개</span>
 												<p>I love reading, traveling and discovering new things. You need to be happy in life.</p>
 												<ul>
 													<li><span>핸드폰:</span> +123976980</li>
 													<li><span>이메일:</span> sample@gmail.com</li>
-													<li><span>MBTI:</span> Ontario, Canada</li>
+													<li><span>MBTI:</span> ISTJ</li>
 												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="tab-pane fade" id="link4">
-								<div class="row merged">
-									<div class="col-lg-12">
-										<div class="mesg-area-head">
-											<div class="active-user">
-												<figure><img src="images/resources/friend-avatar5.jpg" alt="">
-													<span class="status f-offline"></span>
-												</figure>
-												<div>
-													<h6 class="unread">Jhon Doe</h6>
-													<span>Offline</span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-lg-8">
-										<div class="mesge-area conversations">
-											<div class="empty-chat">
-												<div class="no-messages">
-													<i class="ti-comments"></i>
-													<p>Seems people are shy to start the chat. Break the ice send the first message.</p>
-												</div>
 											</div>
 										</div>
 									</div>
@@ -445,8 +242,6 @@
 			</div>
 		</div>	
 	</section><!-- content -->
-</div>
-	
 	
 	<script src="js/main.min.js"></script>
 	<script src="js/script.js"></script>
