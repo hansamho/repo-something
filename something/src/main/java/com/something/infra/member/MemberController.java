@@ -30,5 +30,8 @@ public class MemberController {
 		return "usr/infra/index/friendserach";
 	}
 	
-	 
+	@RequestMapping(value="/test")
+	public String test() {
+		return "usr/infra/index/login1";
+	}
 }
