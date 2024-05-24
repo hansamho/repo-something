@@ -12,4 +12,9 @@ public class MatchController {
 		return "usr/infra/index/match";
 	}
 	
+	@RequestMapping(value = "/friendSearch")
+	public String friendSearch() {
+		
+		return "usr/infra/index/friendserach";
+	}
 }

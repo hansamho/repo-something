@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+	<title>Pitnik Social Network Toolkit</title>
+    <link rel="icon" href="images/fav.png" type="image/png" sizes="16x16"> 
+    
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/color.css">
+	<link rel="stylesheet" href="css/color-pink.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+<body>
+
+<div class="theme-layout  gray-bg">
+	
+	<!--파일헤더 블록처리-->
+	<div th:replace="~{usr/infra/include/usrheader :: usrheader}"></div>
+	
+	<section>
+		<div class="gap2 no-bottom">
+			<div class="container-fluid ext-center">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="featured-baner mate-black ext-low-opacity">
+							<img src="images/resources/pitpoint-feature.jpg" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</section><!-- top banner -->
+	
+	<!-- 친구 검색 기능 -->
+	<section>
+		<div class="gap2 no-gap overlap">
+			<div class="container-fluid ext-center">
+				<div class="row">
+					<div class="col-lg-10" style="text-align: center; padding-left: 20px; ">
+						<div class="search-match">
+							<form method="post">
+								<ul class="select-gender">
+									<li class="selected">
+										<img src="images/male.png" alt="">
+									</li>
+									<li>
+										<img src="images/female.png" alt="">
+									</li>
+								</ul>
+								
+								<div class="age-opt">
+									<label>나이</label>
+									<select>
+										<option>18</option>
+										<option>19</option>
+										<option>20</option>
+										<option>21</option>
+									</select>
+									<p>-</p>
+									<select>
+										<option>22</option>
+										<option>23</option>
+										<option>24</option>
+										<option>25</option>
+									</select>
+								</div>
+								<div class="oth-opt">
+									<div class="loc">
+										<label>MBTI</label>
+										<input type="text" placeholder="MBTI를 입력하세요">
+									</div>
+										
+								</div>	
+								<button type="submit"><i class="fa fa-search"></i> 검색</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</section><!-- Gender search -->
+		
+	<section>
+		<div class="gap gray-bg">
+			<div class="container-fluid ext-right">
+				<div class="row" id="page-contents">
+					<div class="col-2">
+					</div>
+					<div class="col-lg-9">
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="pitpoint-filter central-meta">
+									<ul class="filter-ajex">
+										<li class="active"><a href="#" title="All Members">Total</a></li>
+									</ul>
+								</div>	
+							</div>	
+						</div>	
+						<!-- 친구 요청 목록 -->
+						<div class="load-more">
+							<div class="central-meta item">
+								<div class="pit-post">
+									<figure>
+										<img src="images/resources/date-userlist1.jpg" alt="">
+									</figure>
+									<div class="pit-post-deta">
+										<h4><a href="pitpoint-detail.html" title=""> 이름 | 나이</a></h4>
+										<ul class="post-up-time">
+											<li>
+												<div class="verification">
+													<em class="verify"><i class="fa fa-check-circle"></i> MBTI : ISNJ</em>
+												</div>
+											</li>
+										</ul>
+										<ul class="pit-opt">
+											<li>
+												<div class="likes heart" title="Like/Dislike">❤ <span>1.6k</span></div>
+											</li>	
+												<div class="smiles-bunch">
+													<i class="em em---1"></i>
+													<i class="em em-smiley"></i>
+													<i class="em em-anguished"></i>
+													<i class="em em-laughing"></i>
+													<i class="em em-angry"></i>
+													<i class="em em-astonished"></i>
+													<i class="em em-blush"></i>
+													<i class="em em-disappointed"></i>
+													<i class="em em-worried"></i>
+													<i class="em em-kissing_heart"></i>
+													<i class="em em-rage"></i>
+													<i class="em em-stuck_out_tongue"></i>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<div class="buttons">
+										<a href="#" title="" class="main-btn" data-ripple="">친구 추가</a>
+									</div>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!-- content -->
+
+	<div class="bottombar">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<span class="copyright">© Pitnik 2020. All rights reserved.</span>
+				</div>
+			</div>
+		</div>
+	</div><!-- bottombar-->
+</div>
+	<div class="side-panel">
+		<h4 class="panel-title">General Setting</h4>
+		<form method="post">
+			<div class="setting-row">
+				<span>use night mode</span>
+				<input type="checkbox" id="nightmode1"/> 
+				<label for="nightmode1" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Notifications</span>
+				<input type="checkbox" id="switch22" /> 
+				<label for="switch22" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Notification sound</span>
+				<input type="checkbox" id="switch33" /> 
+				<label for="switch33" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>My profile</span>
+				<input type="checkbox" id="switch44" /> 
+				<label for="switch44" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Show profile</span>
+				<input type="checkbox" id="switch55" /> 
+				<label for="switch55" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+		</form>
+		<h4 class="panel-title">Account Setting</h4>
+		<form method="post">
+			<div class="setting-row">
+				<span>Sub users</span>
+				<input type="checkbox" id="switch66" /> 
+				<label for="switch66" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>personal account</span>
+				<input type="checkbox" id="switch77" /> 
+				<label for="switch77" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Business account</span>
+				<input type="checkbox" id="switch88" /> 
+				<label for="switch88" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Show me online</span>
+				<input type="checkbox" id="switch99" /> 
+				<label for="switch99" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Delete history</span>
+				<input type="checkbox" id="switch101" /> 
+				<label for="switch101" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Expose author name</span>
+				<input type="checkbox" id="switch111" /> 
+				<label for="switch111" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+		</form>
+	</div><!-- side panel -->
+	
+	<div class="popup-wraper">
+		<div class="popup">
+			<span class="popup-closed"><i class="ti-close"></i></span>
+			<div class="popup-meta">
+				<div class="popup-head">
+					<h5>Create New Post</h5>
+				</div>
+				<div class="postbox">
+				<div class="new-postbox">
+					<figure>
+						<img src="images/resources/admin.jpg" alt="">
+					</figure>
+					<div class="newpst-input">
+						<form method="post">
+							<textarea rows="2" placeholder="Share some what you are thinking?"></textarea>
+						</form>
+					</div>
+					<div class="attachments">
+						<ul>
+							<li>
+								<span class="add-loc">
+									<i class="fa-light fa-location-dot"></i>
+								</span>
+							</li>
+							<li>
+								<i class="fa fa-music"></i>
+								<label class="fileContainer">
+									<input type="file">
+								</label>
+							</li>
+							<li>
+								<i class="fa fa-image"></i>
+								<label class="fileContainer">
+									<input type="file">
+								</label>
+							</li>
+							<li>
+								<i class="fa fa-video-camera"></i>
+								<label class="fileContainer">
+									<input type="file">
+								</label>
+							</li>
+							<li>
+								<i class="fa fa-camera"></i>
+								<label class="fileContainer">
+									<input type="file">
+								</label>
+							</li>
+							<li class="preview-btn">
+								<button class="post-btn-preview" type="submit" data-ripple="">Preview</button>
+							</li>
+						</ul>
+						<button class="post-btn" type="submit" data-ripple="">Post</button>
+					</div>
+					<div class="add-location-post">
+						<span>Drag map point to selected area</span>
+						<div class="row">
+							<div class="col-lg-6">
+								<label class="control-label">Lat :</label>
+								<input type="text" class="" id="us3-lat" />
+							</div>
+							<div class="col-lg-6">
+								<label>Long :</label>
+								<input type="text" class="" id="us3-lon" />
+							</div>
+						</div>
+						<!-- map -->
+						<div id="us3"></div>
+					</div>
+				</div>	
+			</div><!-- add post new box -->
+			</div>	
+		</div>
+	</div><!-- create post popup -->
+	
+	<div class="popup-wraper2">
+		<div class="popup post-sharing">
+			<span class="popup-closed"><i class="ti-close"></i></span>
+			<div class="popup-meta">
+				<div class="popup-head">
+					<select data-placeholder="Share to friends..." multiple class="chosen-select multi">
+						<option>Share in your feed</option>
+						<option>Share in friend feed</option>
+						<option>Share in a page</option>
+						<option>Share in a group</option>
+						<option>Share in message</option>
+					</select>
+					<div class="post-status">
+						<span><i class="fa fa-globe"></i></span>
+						<ul>
+							<li><a href="#" title=""><i class="fa fa-globe"></i> Post Globaly</a></li>
+							<li><a href="#" title=""><i class="fa fa-user"></i> Post Private</a></li>
+							<li><a href="#" title=""><i class="fa fa-user-plus"></i> Post Friends</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="postbox">
+					<div class="post-comt-box">
+						<form method="post">
+							<input type="text" placeholder="Search Friends, Pages, Groups, etc....">
+							<textarea placeholder="Say something about this..."></textarea>
+							<div class="add-smiles">
+								<span title="add icon" class="em em-expressionless"></span>
+								<div class="smiles-bunch">
+									<i class="em em---1"></i>
+									<i class="em em-smiley"></i>
+									<i class="em em-anguished"></i>
+									<i class="em em-laughing"></i>
+									<i class="em em-angry"></i>
+									<i class="em em-astonished"></i>
+									<i class="em em-blush"></i>
+									<i class="em em-disappointed"></i>
+									<i class="em em-worried"></i>
+									<i class="em em-kissing_heart"></i>
+									<i class="em em-rage"></i>
+									<i class="em em-stuck_out_tongue"></i>
+								</div>
+							</div>
+
+							<button type="submit"></button>
+						</form>	
+					</div>
+					<figure><img src="images/resources/share-post.jpg" alt=""></figure>
+					<div class="friend-info">
+						<figure>
+							<img alt="" src="images/resources/admin.jpg">
+						</figure>
+						<div class="friend-name">
+							<ins><a title="" href="time-line.html">Jack Carter</a> share <a title="" href="#">link</a></ins>
+							<span>Yesterday with @Jack Piller and @Emily Stone at the concert of # Rock'n'Rolla in Ontario.</span>
+						</div>
+					</div>
+					<div class="share-to-other">
+						<span>Share to other socials</span>
+						<ul>
+							<li><a class="facebook-color" href="#" title=""><i class="fa fa-facebook-square"></i></a></li>
+							<li><a class="twitter-color" href="#" title=""><i class="fa fa-twitter-square"></i></a></li>
+							<li><a class="dribble-color" href="#" title=""><i class="fa fa-dribbble"></i></a></li>
+							<li><a class="instagram-color" href="#" title=""><i class="fa fa-instagram"></i></a></li>
+							<li><a class="pinterest-color" href="#" title=""><i class="fa fa-pinterest-square"></i></a></li>
+						</ul>
+					</div>
+					<div class="copy-email">
+						<span>Copy & Email</span>
+						<ul>
+							<li><a href="#" title="Copy Post Link"><i class="fa fa-link"></i></a></li>
+							<li><a href="#" title="Email this Post"><i class="fa fa-envelope"></i></a></li>
+						</ul>
+					</div>
+					<div class="we-video-info">
+						<ul>
+							<li>
+								<span title="" data-toggle="tooltip" class="views" data-original-title="views">
+									<i class="fa fa-eye"></i>
+									<ins>1.2k</ins>
+								</span>
+							</li>
+							<li>
+								<span title="" data-toggle="tooltip" class="views" data-original-title="shares">
+									<i class="fa fa-share-alt"></i>
+									<ins>20k</ins>
+								</span>
+							</li>
+						</ul>
+						<button class="main-btn color" data-ripple="">Submit</button>
+						<button class="main-btn cancel" data-ripple="">Cancel</button>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div><!-- share popup -->
+	
+	<div class="popup-wraper3">
+		<div class="popup">
+			<span class="popup-closed"><i class="ti-close"></i></span>
+			<div class="popup-meta">
+				<div class="popup-head">
+					<h5>Report Post</h5>
+				</div>
+				<div class="Rpt-meta">
+					<span>We're sorry something's wrong. How can we help?</span>
+					<form method="post" class="c-form">
+						<div class="form-radio">
+						  <div class="radio">
+							<label>
+							  <input type="radio" name="radio" checked="checked"><i class="check-box"></i>It's spam or abuse
+							</label>
+						  </div>
+						  <div class="radio">
+							<label>
+							  <input type="radio" name="radio"><i class="check-box"></i>It breaks r/technology's rules
+							</label>
+						  </div>
+							<div class="radio">
+							<label>
+							  <input type="radio" name="radio"><i class="check-box"></i>Not Related
+							</label>
+						  </div>
+							<div class="radio">
+							<label>
+							  <input type="radio" name="radio"><i class="check-box"></i>Other issues
+							</label>
+						  </div>
+						</div>
+					<div>
+						<label>Write about Report</label>
+						<textarea placeholder="write someting about Post" rows="2"></textarea>
+					</div>
+					<div>
+						<button data-ripple="" type="submit" class="main-btn">Submit</button>
+						<a href="#" data-ripple="" class="main-btn3 cancel">Close</a>
+					</div>
+					</form>	
+				</div>
+			</div>	
+		</div>
+	</div><!-- create post popup -->
+	
+	<div class="popup-wraper1">
+		<div class="popup direct-mesg">
+			<span class="popup-closed"><i class="ti-close"></i></span>
+			<div class="popup-meta">
+				<div class="popup-head">
+					<h5>Send Message</h5>
+				</div>
+				<div class="send-message">
+					<form method="post" class="c-form">
+						<input type="text" placeholder="Sophia">
+						<textarea placeholder="Write Message"></textarea>
+						<button type="submit" class="main-btn">Send</button>
+					</form>
+					<div class="add-smiles">
+						<div class="uploadimage">
+							<i class="fa fa-image"></i>
+							<label class="fileContainer">
+								<input type="file">
+							</label>
+						</div>
+						<span title="add icon" class="em em-expressionless"></span>
+						<div class="smiles-bunch">
+							<i class="em em---1"></i>
+							<i class="em em-smiley"></i>
+							<i class="em em-anguished"></i>
+							<i class="em em-laughing"></i>
+							<i class="em em-angry"></i>
+							<i class="em em-astonished"></i>
+							<i class="em em-blush"></i>
+							<i class="em em-disappointed"></i>
+							<i class="em em-worried"></i>
+							<i class="em em-kissing_heart"></i>
+							<i class="em em-rage"></i>
+							<i class="em em-stuck_out_tongue"></i>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div><!-- send message popup -->	
+	
+	
+	<script src="js/main.min.js"></script>
+	<script src="js/script.js"></script>
+
+
+</body>	
+</html>
