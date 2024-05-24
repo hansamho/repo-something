@@ -12,10 +12,10 @@ public class MemberController {
 		return "usr/infra/index/index";
 	}
 	
-	@RequestMapping(value="/usrlogin")
+	@RequestMapping(value="/roomReg")
 	public String usrlogin() {
 		
-		return "usr/infra/index/login";
+		return "usr/infra/index/roomReg";
 	}
 	
 	@RequestMapping(value="/usrMyPage")
@@ -29,9 +29,5 @@ public class MemberController {
 		
 		return "usr/infra/index/friendserach";
 	}
-	
-	@RequestMapping(value="/test")
-	public String test() {
-		return "usr/infra/index/login1";
-	}
+		
 }

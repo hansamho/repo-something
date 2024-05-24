@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class ChatController {
 
-	@RequestMapping(value="/usrchat")
+	@RequestMapping(value="/chat")
 	public String chat()throws Exception{
 		
 		return "usr/infra/index/chat";
