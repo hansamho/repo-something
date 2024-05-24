@@ -17,4 +17,11 @@ public class MemberController {
 		
 		return "usr/infra/index/login";
 	}
+	
+	@RequestMapping(value="/usrMyPage")
+	public String usrMyPage() {
+		
+		return "usr/infra/index/myPage";
+	}
+	
 }

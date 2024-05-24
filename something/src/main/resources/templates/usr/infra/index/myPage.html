@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+	<title>Pitnik Social Network Toolkit</title>
+    <link rel="icon" href="images/fav.png" type="image/png" sizes="16x16"> 
+    
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/color.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+<body>
+
+	
+	<!--파일헤더 블록처리-->
+	<div th:replace="~{usr/infra/include/usrheader :: usrheader}"></div>
+	
+		
+	<section>
+		<div class="gap2 gray-bg">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="row merged20" id="page-contents">
+							<div class="user-profile">
+								<div class="profile-author-thumb" style="padding-bottom: 10px; padding-left: 20px;">
+													<img alt="author" src="images/resources/author.jpg">
+													<div class="edit-dp">
+														<label class="fileContainer">
+															<i class="fa fa-camera"></i>
+															<input type="file">
+														</label>
+													</div>
+												</div>
+								<div class="profile-section">
+									<div class="row">
+										<div class="col-lg-2 col-md-3" style="align-content: center; text-align: center;">
+										<h4>회원이름</h4>													
+										</div>
+										<div class="col-lg-10 col-md-9">
+											<ul class="profile-menu">
+												<li>
+													<a class="active" href="about.html">마이페이지</a>
+												</li>
+												<li>
+													<a class="" href="timeline-friends.html">친구찾기</a>
+												</li>
+											</ul>
+											<ol class="folw-detail">
+												<li><span>리뷰 </span><ins>101</ins></li>
+												<li><span>좋아요 받은 수</span><ins>22</ins></li>
+												<li><span>친구수</span><ins>1.3K</ins></li>
+											</ol>
+										</div>
+									</div>
+								</div>	
+							</div><!-- user profile banner  -->
+							<div class="col-lg-4 col-md-4">
+								<aside class="sidebar">
+								<div class="central-meta stick-widget">
+									<span class="create-post">Personal Info</span>
+									<div class="personal-head">
+										<span class="f-title"><i class="fa fa-user"></i> About Me:</span>
+										<p>
+											Hi, I’m John Carter, I’m 36 and I work as a Digital Designer for the “dewwater” Agency in Ontario, Canada
+										</p>
+										<span class="f-title"><i class="fa fa-birthday-cake"></i> Birthday:</span>
+										<p>
+											December 17, 1985 
+										</p>
+										<span class="f-title"><i class="fa fa-phone"></i> Phone Number:</span>
+										<p>
+											+1-989-232435234 
+										</p>
+										<span class="f-title"><i class="fa fa-medkit"></i> Blood group:</span>
+										<p>
+											B+
+										</p>
+										<span class="f-title"><i class="fa fa-male"></i> Gender:</span>
+										<p>
+											Male 
+										</p>
+										<span class="f-title"><i class="fa fa-globe"></i> Country:</span>
+										<p>
+											San Francisco, California, USA 
+										</p>
+										<span class="f-title"><i class="fa fa-briefcase"></i> Occupation:</span>
+										<p>
+											UI/UX Designer 
+										</p>
+										<span class="f-title"><i class="fa-regular fa-handshake"></i> Joined:</span>
+										<p>
+											December 20, 2001  
+										</p>
+										
+										<span class="f-title"><i class="fa fa-envelope"></i> Email & Website:</span>
+										<p>
+											<a href="wpkixx.com" title="">www.wpkixx.com</a> Pitnik@yourmail.com 
+										</p>
+										
+									</div>
+								</div>
+								</aside>	
+							</div>
+							<div class="col-8">	
+							<div class="central-meta">
+									<div class="title-block">
+										<div class="row">
+											<div class="col-lg-6">
+												<div class="align-left">
+													<h5>Friends</h5>
+												</div>
+											</div>
+											<div class="col-lg-6">
+												<div class="row merged20">
+													<div class="col-lg-7 col-lg-7 col-sm-7">
+														<form method="post">
+															<input type="text" placeholder="Search Friend">
+															<button type="submit"><i class="fa fa-search"></i></button>
+														</form>
+													</div>
+													<div class="col-lg-4 col-md-4 col-sm-4">
+														<div class="select-options">
+															<select class="select">
+																<option>Sort by</option>
+																<option>A to Z</option>
+																<option>See All</option>
+																<option>Newest</option>
+																<option>oldest</option>
+															</select>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div><!-- title block -->
+								<div class="row">
+								<div class="col-6">
+											<div class="friend-box">
+												<figure>
+													<img src="images/resources/frnd-cover3.jpg" alt="">
+													<span>Followers: 50</span>
+												</figure>
+												<div class="frnd-meta">
+													<img src="images/resources/frnd-figure3.jpg" alt="">
+													<div class="frnd-name">
+														<a href="#" title="">Arnold</a>
+														<span>Istanbul, Turky</span>
+													</div>
+													<ul class="frnd-info">
+														<li><span>Friends:</span> 223 (2 mutule friends)</li>
+														<li><span>Videos:</span> 240</li>
+														<li><span>Photos:</span> 144</li>
+														<li><span>Post:</span> 250</li>
+														<li><span>Since:</span> December, 2014</li>
+													</ul>
+													<a class="send-mesg" href="#" title="">Message</a>
+													<div class="more-opotnz">
+														<i class="fa fa-ellipsis-h"></i>
+														<ul>
+															<li><a href="#" title="">Block</a></li>
+															<li><a href="#" title="">UnBlock</a></li>
+															<li><a href="#" title="">Mute Notifications</a></li>
+															<li><a href="#" title="">hide from friend list</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-6">
+											<div class="friend-box">
+												<figure>
+													<img src="images/resources/frnd-cover3.jpg" alt="">
+													<span>Followers: 50</span>
+												</figure>
+												<div class="frnd-meta">
+													<img src="images/resources/frnd-figure3.jpg" alt="">
+													<div class="frnd-name">
+														<a href="#" title="">Arnold</a>
+														<span>Istanbul, Turky</span>
+													</div>
+													<ul class="frnd-info">
+														<li><span>Friends:</span> 223 (2 mutule friends)</li>
+														<li><span>Videos:</span> 240</li>
+														<li><span>Photos:</span> 144</li>
+														<li><span>Post:</span> 250</li>
+														<li><span>Since:</span> December, 2014</li>
+													</ul>
+													<a class="send-mesg" href="#" title="">Message</a>
+													<div class="more-opotnz">
+														<i class="fa fa-ellipsis-h"></i>
+														<ul>
+															<li><a href="#" title="">Block</a></li>
+															<li><a href="#" title="">UnBlock</a></li>
+															<li><a href="#" title="">Mute Notifications</a></li>
+															<li><a href="#" title="">hide from friend list</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+								<div class="col-6">
+											<div class="friend-box">
+												<figure>
+													<img src="images/resources/frnd-cover3.jpg" alt="">
+													<span>Followers: 50</span>
+												</figure>
+												<div class="frnd-meta">
+													<img src="images/resources/frnd-figure3.jpg" alt="">
+													<div class="frnd-name">
+														<a href="#" title="">Arnold</a>
+														<span>Istanbul, Turky</span>
+													</div>
+													<ul class="frnd-info">
+														<li><span>Friends:</span> 223 (2 mutule friends)</li>
+														<li><span>Videos:</span> 240</li>
+														<li><span>Photos:</span> 144</li>
+														<li><span>Post:</span> 250</li>
+														<li><span>Since:</span> December, 2014</li>
+													</ul>
+													<a class="send-mesg" href="#" title="">Message</a>
+													<div class="more-opotnz">
+														<i class="fa fa-ellipsis-h"></i>
+														<ul>
+															<li><a href="#" title="">Block</a></li>
+															<li><a href="#" title="">UnBlock</a></li>
+															<li><a href="#" title="">Mute Notifications</a></li>
+															<li><a href="#" title="">hide from friend list</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-6">
+											<div class="friend-box">
+												<figure>
+													<img src="images/resources/frnd-cover3.jpg" alt="">
+													<span>Followers: 50</span>
+												</figure>
+												<div class="frnd-meta">
+													<img src="images/resources/frnd-figure3.jpg" alt="">
+													<div class="frnd-name">
+														<a href="#" title="">Arnold</a>
+														<span>Istanbul, Turky</span>
+													</div>
+													<ul class="frnd-info">
+														<li><span>Friends:</span> 223 (2 mutule friends)</li>
+														<li><span>Videos:</span> 240</li>
+														<li><span>Photos:</span> 144</li>
+														<li><span>Post:</span> 250</li>
+														<li><span>Since:</span> December, 2014</li>
+													</ul>
+													<a class="send-mesg" href="#" title="">Message</a>
+													<div class="more-opotnz">
+														<i class="fa fa-ellipsis-h"></i>
+														<ul>
+															<li><a href="#" title="">Block</a></li>
+															<li><a href="#" title="">UnBlock</a></li>
+															<li><a href="#" title="">Mute Notifications</a></li>
+															<li><a href="#" title="">hide from friend list</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>	
+	</section><!-- content -->
+
+	<div class="side-panel">
+		<h4 class="panel-title">General Setting</h4>
+		<form method="post">
+			<div class="setting-row">
+				<span>use night mode</span>
+				<input type="checkbox" id="nightmode1"/> 
+				<label for="nightmode1" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Notifications</span>
+				<input type="checkbox" id="switch22" /> 
+				<label for="switch22" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Notification sound</span>
+				<input type="checkbox" id="switch33" /> 
+				<label for="switch33" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>My profile</span>
+				<input type="checkbox" id="switch44" /> 
+				<label for="switch44" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Show profile</span>
+				<input type="checkbox" id="switch55" /> 
+				<label for="switch55" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+		</form>
+		<h4 class="panel-title">Account Setting</h4>
+		<form method="post">
+			<div class="setting-row">
+				<span>Sub users</span>
+				<input type="checkbox" id="switch66" /> 
+				<label for="switch66" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>personal account</span>
+				<input type="checkbox" id="switch77" /> 
+				<label for="switch77" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Business account</span>
+				<input type="checkbox" id="switch88" /> 
+				<label for="switch88" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Show me online</span>
+				<input type="checkbox" id="switch99" /> 
+				<label for="switch99" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Delete history</span>
+				<input type="checkbox" id="switch101" /> 
+				<label for="switch101" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+			<div class="setting-row">
+				<span>Expose author name</span>
+				<input type="checkbox" id="switch111" /> 
+				<label for="switch111" data-on-label="ON" data-off-label="OFF"></label>
+			</div>
+		</form>
+	</div><!-- side panel -->
+
+	
+	
+	<script src="js/main.min.js"></script>
+	<script src="js/script.js"></script>
+
+</body>	
+</html>
