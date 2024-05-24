@@ -24,4 +24,11 @@ public class MemberController {
 		return "usr/infra/index/myPage";
 	}
 	
+	@RequestMapping(value = "/usrSearch")
+	public String usrSearch() {
+		
+		return "usr/infra/index/friendserach";
+	}
+	
+	 
 }
