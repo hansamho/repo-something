@@ -29,5 +29,17 @@ public class MemberController {
 		
 		return "usr/infra/index/friendserach";
 	}
+	
+	@RequestMapping(value = "/usrLogin")
+	public String usrLogin() {
+		
+		return "usr/infra/index/login";
+	}
+	
+	@RequestMapping(value = "/usrRegister")
+	public String usrRegister() {
+		
+		return "usr/infra/index/register";
+	}
 		
 }
