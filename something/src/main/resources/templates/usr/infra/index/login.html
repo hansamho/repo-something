@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<div th:replace="~{usr/infra/include/usrhead :: head}"></div>
+
+</head>
+<body>
+	<div class="www-layout">
+        <section>
+        	<div class="gap no-gap signin whitish medium-opacity register">
+                <div class="bg-image" style="background-image:url(images/resources/theme-bg.jpg)"></div>
+                <div class="container">
+                	<div class="row">
+                        <div class="col-lg-4">
+                            <div class="we-login-register">
+                                <div class="form-title" >
+                                    <i class="fa-regular fa-right-to-bracket"></i> 로그인
+                                </div>
+                                <form class="we-form" method="post">
+                                    <input type="text" placeholder="Email">
+                                    <input type="password" placeholder="Password">
+                                    <!--<input type="checkbox"><label>Send code to Mobile</label>-->
+                                    <button type="submit" data-ripple="">로그인</button>
+                                    <!--<a class="forgot underline" href="#" title="">forgot password?</a>-->
+                                </form>
+                                <a class="with-smedia facebook" href="#" title="" data-ripple=""><i class="fa-brands fa-facebook-f"></i></a>
+                                <a class="with-smedia twitter" href="#" title="" data-ripple=""><i class="fa-brands fa-twitter"></i></a>
+								<a class="with-smedia instagram" href="#" title="" data-ripple=""><i class="fa-brands fa-instagram"></i></a>
+								<a class="with-smedia google" href="#" title="" data-ripple=""><i class="fa-brands fa-tiktok"></i></a>
+								<br><br>
+								<hr>
+                                <span>계정이 없으신가요? <a class="we-account underline" href="#" title="">회원가입</a></span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+         
+    </div>
+    
+    	<script src="js/main.min.js"></script>
+		<script src="js/script.js"></script>
+</body>	
+</html>

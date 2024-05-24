@@ -7227,11 +7227,11 @@ a.addnewforum {
 }
 
 .register .we-form {
-    margin-bottom: 25px;
+    margin-bottom: 50px;
 }
 .register .we-login-register {
-    padding-bottom: 40px;
-    padding-top: 30px;
+    padding-bottom: 70px;
+    padding-top: 70px;
 }
 
 .form-title {
@@ -7240,6 +7240,7 @@ a.addnewforum {
     font-weight: 500;
     text-transform: uppercase;
     width: 100%;
+    margin-bottom: 70px;
 }
 .form-title > span {
     color: #efefef;
@@ -7263,7 +7264,7 @@ a.addnewforum {
     border: 1px solid #eaeaea;
     
     float: left;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
     padding: 13px 20px;
     width: 100%;
 	border-radius: 30px;
@@ -18985,6 +18986,7 @@ ul.pagination {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     display: inline-block;
     margin-top: 35px;
+    margin-left: 350px;
     padding: 15px;
     width: 100%;
 }
