@@ -188,10 +188,6 @@
              ,memberPwd
              ,memberName
              ,memberSeq
-             ,genderCd
-             ,birthDay
-             ,memberEmail
-             ,phoneNumber
         from
         	member
         	where 1=1
@@ -200,43 +196,4 @@
      
     
 	
-	<select id="selectListNew" resultMap="resultMapObj">
-	SELECT
-	 a.productSeq
-             ,a.productName
-             ,a.productPrice
-         	 ,a.productGenderCd
-         	 ,a.productSeasonCd
-         	 ,a.productNewNy
-         	 ,b.path
-	FROM
-		product a
-	LEFT JOIN
-		fileUploaded b
-	ON a.productSeq = b.pseq
-	WHERE 1=1
-		AND a.productNewNy = 1
-		AND b.defaultNy=1
-		limit 8 offset #{startRnumForMysql}
-	</select>
-	
-	<select id="selectListBest" resultMap="resultMapObj">
-	SELECT
-	 a.productSeq
-             ,a.productName
-             ,a.productPrice
-         	 ,a.productGenderCd
-         	 ,a.productSeasonCd
-         	 ,a.productBestNy
-         	 ,b.path
-	FROM
-		product a
-	LEFT JOIN
-		fileUploaded b
-	ON a.productSeq = b.pseq
-	WHERE 1=1
-		AND a.productBestNy = 1
-		AND b.defaultNy=1
-		limit 8 offset #{startRnumForMysql}
-	</select>
 </mapper>

@@ -1,5 +1,6 @@
 package com.something.infra.member;
 
-public class MemberDao {
+public interface MemberDao {
 
+	public MemberDto selectLogin();
 }
