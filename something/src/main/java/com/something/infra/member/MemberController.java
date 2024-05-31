@@ -41,5 +41,11 @@ public class MemberController {
 		
 		return "usr/infra/index/register";
 	}
+	
+	@RequestMapping(value = "/usrMatchList")
+	public String usrMatchList() {
+		
+		return "usr/infra/index/matchList";
+	}
 		
 }
