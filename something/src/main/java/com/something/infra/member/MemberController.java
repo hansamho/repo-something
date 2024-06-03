@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.something.common.constants.Constants;
-import com.something.infra.code.CodeDto;
-import com.something.infra.code.CodeService;
 
 import jakarta.servlet.http.HttpSession;
 
