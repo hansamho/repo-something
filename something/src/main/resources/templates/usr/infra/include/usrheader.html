@@ -22,7 +22,7 @@
 
 		<div class="topbar stick">
 			<div class="logo">
-				<a title="" href="newsfeed.html"><img src="images/logo.png" alt=""></a>
+				<a title="" th:href="@{/usrindex}"><img src="images/logo.png" alt=""></a>
 			</div>
 			<div class="top-area">
 				<ul class="setting-area float-right">
@@ -82,21 +82,22 @@
 					</li>
 				</ul>
 				<div class="user-img">
-					<h5>회원이름</h5>
+					<h5>[[${session.sessNameUsr}]]</h5>
 					<img src="images/resources/admin.jpg" alt="">
-					<div class="user-setting">
+					<div class="user-setting" >
 						<span class="seting-title">User setting <a href="#" title="">see all</a></span>
 						<ul class="log-out">
 							<li><a th:href="@{/usrMyPage}" title=""><i class="ti-user"></i> view profile</a></li>
-							<li><a href="setting.html" title=""><i class="ti-pencil-alt"></i>edit profile</a></li>
+							<li><a href="#" title=""><i class="ti-pencil-alt"></i>edit profile</a></li>
 							<li><a href="#" title=""><i class="ti-target"></i>activity log</a></li>
-							<li><a href="setting.html" title=""><i class="ti-settings"></i>account setting</a></li>
-							<li><a href="logout.html" title=""><i class="ti-power-off"></i>log out</a></li>
+							<button type="button" th:if="${session.sessSeqUsr == null}"> <a th:href="@{/usrlogin}" class="mt-2 text-black">로그인</a></button>
+                        	<button type="button" th:unless="${session.sessSeqUsr == null}" id="buttonSignout" class="mt-2 text-black">로그아웃</button>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</div><!-- topbar -->
 </th:block>
+
 
 </html>

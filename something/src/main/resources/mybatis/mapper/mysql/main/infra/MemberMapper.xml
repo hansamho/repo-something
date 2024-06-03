@@ -8,22 +8,22 @@
 	<!--<select id="selectList" resultMap="resultMapObj">  애매 
 
          select
-             memberSeq
-             ,memberName
-             ,memberId
-             ,memberPwd
+             ifmmSeq
+             ,ifmmName
+             ,ifmmId
+             ,ifmmPwd
          	 ,memberEmail
-         	 ,genderCd
-         	 ,birthDay
-         	 ,phoneNumber
-         	 ,memberDelNy
-         	 ,memberRegDate
-         	 ,memberModDate
+         	 ,ifmmGenderCd
+         	 ,ifmmDob
+         	 ,ifmmMobile
+         	 ,delNy
+         	 ,regDate
+         	 ,modDate
          from 
              member 
 	   WHERE 1=1
 	   
-	        <if test="shDelNy != null and shDelNy.equals('')">AND memberDelNy = #{shDelNy}</if>
+	        <if test="shDelNy != null and shDelNy.equals('')">AND delNy = #{shDelNy}</if>
 	     
 	     
 			<choose>
@@ -32,8 +32,8 @@
 			</choose>
 	
 	    	 <choose>
-	         	 <when test="shOption == 1">AND memberSeq = #{shValue}</when>
-	            <when test="shOption == 2">AND memberName LIKE CONCAT('%',#{shValue},'%')</when>
+	         	 <when test="shOption == 1">AND ifmmSeq = #{shValue}</when>
+	            <when test="shOption == 2">AND ifmmName LIKE CONCAT('%',#{shValue},'%')</when>
 	       	 </choose>
 	       	 
 	</select>-->
@@ -43,34 +43,33 @@
 	             
 	   WHERE 1=1
 	  
-	      <if test="shDelNy != null and !shDelNy.equals('')">AND memberDelNy = #{shDelNy}</if>
+	      <if test="shDelNy != null and !shDelNy.equals('')">AND delNy = #{shDelNy}</if>
 	     
 	     
 			<choose>
-				<when test="shOptionDate == 1">AND memberRegDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
-				<when test="shOptionDate == 2">AND memberModDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+				<when test="shOptionDate == 1">AND regDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+				<when test="shOptionDate == 2">AND modDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
 			</choose>
 	
 	    	 <choose>
-	         	 <when test="shOption == 1">AND memberSeq = #{shValue}</when>
-	            <when test="shOption == 2">AND memberName LIKE CONCAT('%',#{shValue},'%')</when>
+	         	 <when test="shOption == 1">AND ifmmSeq = #{shValue}</when>
+	            <when test="shOption == 2">AND ifmmName LIKE CONCAT('%',#{shValue},'%')</when>
 	       	 </choose>
 	</sql>
 	
-	<select id="selectList" resultMap="resultMapObj"> <!-- 애매 -->
+	<select id="selectList" resultMap="resultMapObj"> 애매
 
          select
-             memberSeq
-             ,memberName
-             ,memberId
-             ,memberPwd
-         	 ,memberEmail
-         	 ,genderCd
-         	 ,birthDay
-         	 ,phoneNumber
-         	 ,memberDelNy
-         	 ,memberRegDate
-         	 ,memberModDate
+             ifmmSeq
+             ,ifmmName
+             ,ifmmId
+             ,ifmmPwd
+         	 ,ifmmGenderCd
+         	 ,ifmmDob
+         	 ,ifmmMobile
+         	 ,delNy
+         	 ,regDate
+         	 ,modDate
          	  <include refid="selectCommon" />
 
          	 limit #{rowNumToShow} offset #{startRnumForMysql}
@@ -78,76 +77,72 @@
      
      <select id="naverOne" resultMap="resultMapObj">
 		select
-			memberSeq
-			,memberName
-            ,memberId
+			ifmmSeq
+			,ifmmName
+            ,ifmmId
 		from member 
 		where 1 = 1
-			AND memberId = #{email}
+			AND ifmmId = #{email}
 	</select>
 	
-	<insert id="naverInsert">
-	insert into member(
-	memberName
-	,memberId
-	,phoneNumber
-	) values(
-	#{name}
-	,#{email}
-	,#{mobile}
-	)
-	</insert>
+<!-- 	<insert id="naverInsert"> -->
+<!-- 	insert into member( -->
+<!-- 	ifmmName -->
+<!-- 	,ifmmId -->
+<!-- 	,ifmmMobile -->
+<!-- 	) values( -->
+<!-- 	#{name} -->
+<!-- 	,#{email} -->
+<!-- 	,#{mobile} -->
+<!-- 	) -->
+<!-- 	</insert> -->
      
      <select id="selectOneCount" resultType="Integer">
 		SELECT COUNT(*)
 		<include refid="selectCommon" />
 	</select>
 	
-	<select id="selectOneCountPB" resultType="Integer">
-		SELECT COUNT(*) FROM product
-		where productBestNy = 0
-	</select>
+<!-- 	<select id="selectOneCountPB" resultType="Integer"> -->
+<!-- 		SELECT COUNT(*) FROM product -->
+<!-- 		where productBestNy = 0 -->
+<!-- 	</select> -->
 	
-	<select id="selectOneCountPN" resultType="Integer">
-		SELECT COUNT(*) FROM product
-		where productNewNy = 1
-	</select>
+<!-- 	<select id="selectOneCountPN" resultType="Integer"> -->
+<!-- 		SELECT COUNT(*) FROM product -->
+<!-- 		where productNewNy = 1 -->
+<!-- 	</select> -->
 	
 	<select id="selectOne" resultMap="resultMapObj">
 		select
-			memberSeq
-            ,memberName
-            ,memberId
-            ,memberPwd
-         	,memberEmail
-         	,genderCd
-         	,birthDay
-         	,phoneNumber
-         	,memberDelNy
-         	,memberRegDate
-         	,memberModDate
+			ifmmSeq
+            ,ifmmName
+            ,ifmmId
+            ,ifmmPwd
+         	,ifmmGenderCd
+         	,ifmmMbtiCd
+         	,ifmmDob
+         	,ifmmMobile
+         	,delNy
+         	,regDate
+         	,modDate
 		from member 
 		where 1 = 1
-			AND memberSeq = #{memberSeq}
+			AND ifmmSeq = #{ifmmSeq}
 	</select>
 	
 	<insert id="insert">
 		insert into member (
-		 	memberName
-            ,memberId
-            ,memberPwd
-         	,memberEmail
-         	,genderCd
-         	,birthDay
-         	,phoneNumber
+		 	ifmmName
+            ,ifmmId
+            ,ifmmPwd
+         	,ifmmGenderCd
+         	,ifmmDob
 		) values (
-		#{memberName}
-		,#{memberId}
-		,#{memberPwd}
-		,#{memberEmail}
-		,#{genderCd}
-		,#{birthDay}
-		,#{phoneNumber}
+		#{ifmmName}
+		,#{ifmmId}
+		,#{ifmmPwd}
+		,#{ifmmGenderCd}
+		,#{ifmmDob}
 		)
 	</insert>
 	
@@ -155,43 +150,42 @@
 	<update id="update">
 		update member
 		set
-			memberName = #{memberName}
-            ,memberId = #{memberId}
-            ,memberPwd = #{memberPwd}
-         	,memberEmail = #{memberEmail}
-         	,genderCd = #{genderCd}
-         	,birthDay = #{birthDay}
-         	,phoneNumber = #{phoneNumber}
+			ifmmName = #{ifmmName}
+            ,ifmmId = #{ifmmId}
+            ,ifmmPwd = #{ifmmPwd}
+         	,ifmmGenderCd = #{ifmmGenderCd}
+         	,ifmmDob = #{ifmmDob}
+         	,ifmmMobile = #{ifmmMobile}
     		where 1=1
-    		and memberSeq = #{memberSeq}
+    		and ifmmSeq = #{ifmmSeq}
 	</update>
 	
 	<update id="uelete">
 		update member
 		set
-		memberDelNy = 1
+		delNy = 1
     		where 1=1
-    		and memberSeq = #{memberSeq}
+    		and ifmmSeq = #{ifmmSeq}
 	</update>
 	
 	<delete id="delete">
 		delete from member
 		where 1 = 1
-			and memberSeq = #{memberSeq}
+			and ifmmSeq = #{ifmmSeq}
 	</delete>
 	
 	
 	<!-- user -->
 	<select id="selectLogin" resultMap="resultMapObj"> <!-- 애매 -->
          select
-             memberId
-             ,memberPwd
-             ,memberName
-             ,memberSeq
+             ifmmId
+             ,ifmmPwd
+             ,ifmmName
+             ,ifmmSeq
         from
         	member
         	where 1=1
-        	and memberId = #{memberId}
+        	and ifmmId = #{ifmmId}
      </select>
      
     

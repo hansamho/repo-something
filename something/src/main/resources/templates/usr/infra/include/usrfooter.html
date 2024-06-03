@@ -17,6 +17,35 @@
 	
 	<script src="js/main.min.js"></script>
 	<script src="js/script.js"></script>
+	
+	<script type="text/javascript">
+		document.getElementById("buttonSignout").onclick = function () {
+// 			alert("qqqqqqqqqq");
+// 			if(validation() == false) return false;
+			
+			$.ajax({
+				async: true 
+				,cache: false
+				,type: "post"
+				/* ,dataType:"json" */
+				,url: "/usrSignOut"
+				/* ,data : $("#formLogin").serialize() */
+				,data : { "ifmmId" : $("#ifmmId").val(), "ifmmPwd" : $("#ifmmPwd").val()}
+				,success: function(response) {
+// 					alert("확인");
+					if(response.rt == "success") {
+// 						alert("sssssss");
+						location.href = "/usrindex";
+
+					}  
+				}
+				,error : function(jqXHR, textStatus, errorThrown){
+					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+				}
+			});
+		}
+			
+		</script>
 </th:block>
 
 </html>

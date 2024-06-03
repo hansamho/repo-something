@@ -29,7 +29,7 @@
 								<div class="profile-section">
 									<div class="row">
 										<div class="col-lg-2 col-md-3" style="align-content: center; text-align: center;">
-										<h4>회원이름</h4>													
+										<h4>[[${session.sessNameUsr}]]</h4>													
 										</div>
 										<div class="col-lg-10 col-md-9">
 											<ul class="profile-menu">
@@ -54,44 +54,18 @@
 								<div class="central-meta stick-widget">
 									<span class="create-post">Personal Info</span>
 									<div class="personal-head">
-										<span class="f-title"><i class="fa fa-user"></i> About Me:</span>
-										<p>
-											Hi, I’m John Carter, I’m 36 and I work as a Digital Designer for the “dewwater” Agency in Ontario, Canada
+										<span class="f-title"><i class="fa fa-user"></i> MBTI:</span>
+										<p th:if="${item.ifmmMbtiCd != null}"	th:text="${@codeService.selectOneCachedCode(item.ifmmMbtiCd)}">
 										</p>
-										<span class="f-title"><i class="fa fa-birthday-cake"></i> Birthday:</span>
-										<p>
-											December 17, 1985 
+										<span class="f-title"><i class="fa fa-birthday-cake"></i> 생일:</span>
+										<p th:text="${item.ifmmDob}">
 										</p>
-										<span class="f-title"><i class="fa fa-phone"></i> Phone Number:</span>
-										<p>
-											+1-989-232435234 
+										<span class="f-title"><i class="fa fa-phone"></i> 핸드폰:</span>
+										<p th:text="${item.ifmmMobile}">
 										</p>
-										<span class="f-title"><i class="fa fa-medkit"></i> Blood group:</span>
-										<p>
-											B+
+										<span class="f-title"><i class="fa fa-male"></i> 성별:</span>
+										<p th:if="${item.ifmmGenderCd != null}"	th:text="${@codeService.selectOneCachedCode(item.ifmmGenderCd)}">
 										</p>
-										<span class="f-title"><i class="fa fa-male"></i> Gender:</span>
-										<p>
-											Male 
-										</p>
-										<span class="f-title"><i class="fa fa-globe"></i> Country:</span>
-										<p>
-											San Francisco, California, USA 
-										</p>
-										<span class="f-title"><i class="fa fa-briefcase"></i> Occupation:</span>
-										<p>
-											UI/UX Designer 
-										</p>
-										<span class="f-title"><i class="fa-regular fa-handshake"></i> Joined:</span>
-										<p>
-											December 20, 2001  
-										</p>
-										
-										<span class="f-title"><i class="fa fa-envelope"></i> Email & Website:</span>
-										<p>
-											<a href="wpkixx.com" title="">www.wpkixx.com</a> Pitnik@yourmail.com 
-										</p>
-										
 									</div>
 								</div>
 								</aside>	

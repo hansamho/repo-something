@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.something.infra.codegroup.CodeGroupDao">
+<resultMap id="resultMapObj" type="com.something.infra.codegroup.CodeGroupDto"></resultMap>
+	
+	<sql id ="selectCommon">
+        FROM codeGroup 
+        WHERE 1=1
+<!--           <if test="shUseNy != null and !shUseNy.equals('')">AND ifcgUseNy = #{shUseNy}</if>  -->
+        <if test="shDelny != null and !shDelny.equals('')">AND delNy = #{shDelny}</if> 
+       
+				<choose>
+					<when test="shOptionDate == 1">AND regDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+					<when test="shOptionDate == 2">AND modDate BETWEEN #{shDateStart} AND #{shDateEnd}</when>
+				</choose>
+     
+        <choose>
+            <when test="shOption == 1">AND ifcgSeq = #{shValue}</when>
+            <when test="shOption == 2">AND ifcgName LIKE CONCAT('%',#{shValue},'%')</when>
+<!--              <when test="shOption == 3">AND ifcgNameEng LIKE CONCAT('%',#{shValue},'%')</when> -->
+        </choose>
+        </sql>
+	
+	
+	<select id="selectList" resultMap="resultMapObj">
+	SELECT
+		ifcgSeq
+		,ifcgName
+		,regDate
+		,modDate
+		,delNy
+	 <include refid="selectCommon" />
+        limit #{rowNumToShow} offset #{startRnumForMysql}
+
+	</select>
+	
+	
+	
+	<select id="selectOne">
+	SELECT
+		ifcgSeq
+		,ifcgName
+		,regDate
+		,modDate
+		,delNy
+	FROM
+		codeGroup
+	WHERE 1=1
+	AND ifcgSeq = #{ifcgSeq}
+	</select>
+	
+	<insert id="insert">
+	INSERT INTO codeGroup(
+		ifcgName
+	)VALUES (
+		#{ifcgName}
+	)
+	</insert>
+  	
+  	<update id="update">
+    	
+    	UPDATE codeGroup 
+    	set
+    	ifcgName = #{ifcgName}
+    	WHERE ifcgSeq = #{ifcgSeq}
+  
+    </update>
+  	
+<!--   	<update id="uelete"> -->
+    	
+<!--     	UPDATE codeGroup  -->
+<!--     	set -->
+<!--     		delNy = 1 -->
+<!--     	WHERE 1=1  -->
+<!--     	AND	ifcgSeq = #{ifcgSeq} -->
+  
+<!--     </update> -->
+    
+    <update id="uelete">
+    	UPDATE codeGroup
+    	SET
+    		delNy = 1
+    	WHERE 1=1
+    		AND ifcgSeq = #{ifcgSeq}
+    </update>
+  	
+  	<delete id="delete">
+    	DELETE FROM  codeGroup
+    	WHERE ifcgSeq = #{ifcgSeq}
+    </delete>
+  	
+  	<select id="selectOneCount" resultType="Integer">
+		SELECT COUNT(*)
+    	<include refid="selectCommon" />
+	</select>
+  	
+  	
+  	<select id="selectListWithoutPaging" resultMap="resultMapObj">
+		SELECT
+			a.ifcgSeq
+			,a.ifcgName
+		FROM codeGroup a
+		WHERE 1=1
+			AND delNy = 0
+		
+	</select>
+</mapper>
