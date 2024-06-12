@@ -1,5 +1,8 @@
 package com.something.infra.match;
 
-public class MatchVo {
+import com.something.common.base.BaseVo;
 
+public class MatchVo extends BaseVo {
+
+	
 }

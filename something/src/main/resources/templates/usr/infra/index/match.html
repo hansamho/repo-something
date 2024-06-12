@@ -9,6 +9,8 @@
 	<div th:replace="~{usr/infra/include/usrheader :: usrheader}"></div>
 	
 		<section>
+		<form name="formList" id="formList" method="get" autocomplete="off">
+<!-- 		<input type="hidden" name="thisPage" th:value="${vo.thisPage}" default="1"/> -->
 			<div class="gap2 gray-bg">
 				<div class="container">
 					<div class="row">
@@ -24,14 +26,14 @@
 															alt=""></a>
 												</figure>
 												<div class="page-meta">
-													<a href="#" title="" class="underline">회원이름</a>
+													<a href="#" title="" class="underline">[[${session.sessNameUsr}]]</a>
 												</div>
-													<div>
-														<a href="" class="main-btn2" data-ripple="" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;로그인&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-													</div>
-													<div>
-														<a href="" class="main-btn" data-ripple="" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;로그아웃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-													</div>
+<!-- 													<div> -->
+<!-- 														<a href="" class="main-btn2" data-ripple="" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;로그인&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> -->
+<!-- 													</div> -->
+<!-- 													<div> -->
+<!-- 														<a href="" class="main-btn" data-ripple="" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;로그아웃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> -->
+<!-- 													</div> -->
 													<!--<li>
 														<span><i class="ti-video-camera"></i>Live</span>
 													</li>
@@ -103,114 +105,38 @@
 										</div><!-- weather-->
 									</aside>
 								</div><!-- sidebar -->
-								<div class="col-lg-9">
+								<div class="col-lg-9" >
 									<!--매칭방 목록 시작-->
-									<div class="central-meta item">
+									<div class="central-meta item" th:if="${#lists.isEmpty(List)}" th:each="list : ${list}">
 										<div class="classic-post">
 											<figure>
 												<img src="images/resources/classic10.jpg" alt="">
 												<span>Super Hot</span>
 											</figure>
-											<div class="classic-pst-meta">
+											<div class="classic-pst-meta" >
 												<h4><i class="fa fa-check-circle" title="verified"></i> <a href="#"
-														title=""> Yamaha Bike 450cc Red Matalic</a></h4>
+														title="" th:text="${list.matcRoomName}"></a></h4>
 												<p>Beautiful Rider bike for sale. 450cc new tyre long seat... </p>
 												<div class="location-area">
 													<i>Last Updated: Dec,12 2020</i>
-													<span><i class="fa-regular fa-location-dot"></i> onatrio,
+													<span th:text="${list.matcLocal}"><i class="fa-regular fa-location-dot"></i> onatrio,
 														Canada</span>
 													<a href="#" class="main-btn" title="">Add to Cart</a>
 												</div>
 											</div>
 										</div>
 									</div>
-									<!--매칭방 목록 끝-->
-									<!--매칭방 목록 시작-->
-									<div class="central-meta item">
-										<div class="classic-post">
-											<figure>
-												<img src="images/resources/classic10.jpg" alt="">
-												<span>Super Hot</span>
-											</figure>
-											<div class="classic-pst-meta">
-												<h4><i class="fa fa-check-circle" title="verified"></i> <a href="#"
-														title=""> Yamaha Bike 450cc Red Matalic</a></h4>
-												<p>Beautiful Rider bike for sale. 450cc new tyre long seat... </p>
-												<span class="prise">$10,000</span>
-												<div class="location-area">
-													<i>Last Updated: Dec,12 2020</i>
-													<span><i class="fa-regular fa-location-dot"></i> onatrio,
-														Canada</span>
-													<a href="#" class="main-btn" title="">Add to Cart</a>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!--매칭방 목록 끝-->
-									<!--매칭방 목록 시작-->
-									<div class="central-meta item">
-										<div class="classic-post">
-											<figure>
-												<img src="images/resources/classic10.jpg" alt="">
-												<span>Super Hot</span>
-											</figure>
-											<div class="classic-pst-meta">
-												<h4><i class="fa fa-check-circle" title="verified"></i> <a href="#"
-														title=""> Yamaha Bike 450cc Red Matalic</a></h4>
-												<p>Beautiful Rider bike for sale. 450cc new tyre long seat... </p>
-												<span class="prise">$10,000</span>
-												<div class="location-area">
-													<i>Last Updated: Dec,12 2020</i>
-													<span><i class="fa-regular fa-location-dot"></i> onatrio,
-														Canada</span>
-													<a href="#" class="main-btn" title="">Add to Cart</a>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!--매칭방 목록 끝-->
-									<!--매칭방 목록 시작-->
-									<div class="central-meta item">
-										<div class="classic-post">
-											<figure>
-												<img src="images/resources/classic10.jpg" alt="">
-												<span>Super Hot</span>
-											</figure>
-											<div class="classic-pst-meta">
-												<h4><i class="fa fa-check-circle" title="verified"></i> <a href="#"
-														title=""> Yamaha Bike 450cc Red Matalic</a></h4>
-												<p>Beautiful Rider bike for sale. 450cc new tyre long seat... </p>
-												<span class="prise">$10,000</span>
-												<div class="location-area">
-													<i>Last Updated: Dec,12 2020</i>
-													<span><i class="fa-regular fa-location-dot"></i> onatrio,
-														Canada</span>
-													<a href="#" class="main-btn" title="">Add to Cart</a>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!--매칭방 목록 끝-->
-									<!--매칭방 목록 시작-->
-									<div class="central-meta item">
-										<div class="classic-post">
-											<figure>
-												<img src="images/resources/classic10.jpg" alt="">
-												<span>Super Hot</span>
-											</figure>
-											<div class="classic-pst-meta">
-												<h4><i class="fa fa-check-circle" title="verified"></i> <a href="#"
-														title=""> Yamaha Bike 450cc Red Matalic</a></h4>
-												<p>Beautiful Rider bike for sale. 450cc new tyre long seat... </p>
-												<span class="prise">$10,000</span>
-												<div class="location-area">
-													<i>Last Updated: Dec,12 2020</i>
-													<span><i class="fa-regular fa-location-dot"></i> onatrio,
-														Canada</span>
-													<a href="#" class="main-btn" title="">Add to Cart</a>
-												</div>
-											</div>
-										</div>
+									<!-- 페이징 -->
+									<div class="pagination-box">
+										<ul class="pagination">
+											<li class="prev-pge"><a href="#" title=""><i class="fa fa-angle-left"></i></a></li>
+											<li><a href="#" title="" data-ripple="">1</a></li>
+											<li><a class="active" href="#" title="" data-ripple="">2</a></li>
+											<li><a href="#" title="" data-ripple="">3</a></li>
+											<li class="dotzz">.....</li>
+											<li><a href="#" title="" data-ripple="">10</a></li>
+											<li class="next-pge"><a href="#" title=""><i class="fa fa-angle-right"></i></a></li>
+										</ul>
 									</div>
 									<!--매칭방 목록 끝-->
 								</div>
@@ -220,6 +146,7 @@
 					</div>
 				</div>
 			</div>
+			</form>
 		</section><!-- content -->
 
 		<div th:replace="~{usr/infra/include/usrfooter :: usrfooter}"></div>

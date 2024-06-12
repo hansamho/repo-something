@@ -18,13 +18,28 @@
 			<span style="--i:12;">.</span>
 		</div>
 	</div>
+	<style>
+        .float-center {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+        }
 
+        .float-center li {
+            margin: 0 30px; /* 양쪽에 15px의 마진 추가 */
+        }
+    </style>
 
 		<div class="topbar stick">
 			<div class="logo">
 				<a title="" th:href="@{/usrindex}"><img src="images/logo.png" alt=""></a>
 			</div>
 			<div class="top-area">
+				<ul class="float-center">
+					<li><a th:href="@{/usrmatch}">match</a></li>
+					<li><a th:href="@{/usrReviewReg}">review</a></li>
+				</ul>
 				<ul class="setting-area float-right">
 					<!--다국어-->
 					<li><a href="#" title="Languages" data-ripple=""><i>
@@ -87,7 +102,7 @@
 					<div class="user-setting" >
 						<span class="seting-title">User setting <a href="#" title="">see all</a></span>
 						<ul class="log-out">
-							<li><a th:href="@{/usrMyPage}" title=""><i class="ti-user"></i> view profile</a></li>
+							<li><a th:href="@{/usrMyPage}" title=""><i class="ti-user"></i>마이 페이지</a></li>
 							<li><a href="#" title=""><i class="ti-pencil-alt"></i>edit profile</a></li>
 							<li><a href="#" title=""><i class="ti-target"></i>activity log</a></li>
 							<button type="button" th:if="${session.sessSeqUsr == null}"> <a th:href="@{/usrlogin}" class="mt-2 text-black">로그인</a></button>

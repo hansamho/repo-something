@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.something.infra.match.MatchDao">
+
+	<resultMap id="resultMapObj" type="com.something.infra.match.MatchDto"></resultMap>
+
+	<select id="matchList" resultMap="resultMapObj">
+		SELECT 
+			a.matcSeq
+			,a.matcRoomName
+			,a.matcLocal
+		FROM matchs a
+		WHERE 1=1
+		limit #{rowNumToShow} offset #{startRnumForMysql}
+	</select>
+     
+    <select id="selectOneCount" resultType="Integer">
+    	SELECT COUNT(*)
+    	FROM matchs 
+    	WHERE 1=1
+    </select>
+	
+</mapper>

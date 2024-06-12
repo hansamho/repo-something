@@ -46,6 +46,22 @@
 		}
 			
 		</script>
+		
+		<script> 
+
+			let goUrUsrMatchList = "/usrmatch";
+			
+			goList = function (thisPage) {
+			    document.querySelector("input[name=thisPage]").value = thisPage;
+			    form.action = goUrUsrMatchList;
+			    form.submit();
+			}
+	
+	
+			let form = document.querySelector("form[name=formList]");		/* ### */
+				
+ 		</script>
+		
 </th:block>
 
 </html>
